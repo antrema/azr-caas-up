@@ -25,6 +25,7 @@ FROM ubuntu:oracular
 
 WORKDIR /
 COPY --from=builder /workspace/azr-caas-up .
+COPY test-up.txt .
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ca-certificates && \
     rm -rf /var/cache/apt/archives /var/lib/apt/lists/*
